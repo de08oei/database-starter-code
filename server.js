@@ -10,6 +10,8 @@ var app = express();
 var mongoose = require('mongoose');
 require('./db');
 const Coordinates = mongoose.model('Coordinates');
+var mongoDB = 'mongodb://127.0.0.1/mydatabase';
+mongoose.connect(mongoDB, {useNewUrlParser: true});
 var db = mongoose.connection;
 db.once('open', function() {
   console.log("Open for business");
